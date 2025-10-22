@@ -1,0 +1,29 @@
+
+
+.landing {
+    padding: 24px, 12px, 12px, 24px;
+    width: 100%;
+    background-image: url('../assets/Movie_Posters.png');
+        background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 12px;
+    padding: 36px 0;
+    color: white;
+}
+
+.nav__list {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav__link {
+    padding: 0 12px;
+    text-decoration: none;
+}
+
