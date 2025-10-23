@@ -12,7 +12,7 @@ const Navbar = () => {
     <div className='nav__container'>
         <div className="logo">Movie List</div>
         <div className="ticket__wrapper">
-      <img src={ticket} alt="ticket"/>
+      <img src={ticket} alt="ticket" className='ticket__img'/>
       </div>
     </div>
     <ul className='nav__list'>
