@@ -6,3 +6,16 @@
     box-sizing: border-box;
 }
 
+.search__results {
+    background-color: rgb(55, 32, 85);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.results__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 32px;
+    color: white;
+}
+
