@@ -18,9 +18,10 @@ const Home = () => {
       </div>
     </div>
     <ul className='nav__list'>
-    <li className='nav__link'>Home</li>
-    <li className='nav__link'>Find Your Movie</li>
-    <li className='nav__link'>Contact</li>
+    <li className='nav__link'><a href="#">Home</a></li>
+    <li className='nav__link'><a href="#"> Find Your Movie</a></li>
+    <li className='nav__link'><a href="mailto:mmcmullinyohe@gmail.com" target="_blank" class="nav__link--contact">
+     Contact</a></li>
     </ul>
     </div>
 

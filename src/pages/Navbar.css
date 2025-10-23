@@ -48,6 +48,10 @@
     font-size: 42px;
 }
 
+.nav__link {
+    padding: 0 12px;
+    text-decoration: none;
+}
 
 .nav__link--contact {
     background-color: rgb(52, 3, 131);
