@@ -1,11 +1,14 @@
 import React from 'react'
-
+import { useState } from 'react'
 import ticket from '../assets/ticket.svg'
 import './Navbar.css'
 import Movie_Posters from '../assets/Movie_Posters.png'
 import './Searchbar.css'
 
 const Home = () => {
+
+
+
   return (
     <div>
         <div className="landing">
