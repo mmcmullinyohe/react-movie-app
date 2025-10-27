@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ticket from '../assets/ticket.svg'
 import './Navbar.css'
 import Movie_Posters from '../assets/Movie_Posters.png'
@@ -33,6 +33,8 @@ const Home = () => {
     </div>
     <div className="search__bar--wrapper">
         <input type='text' className='movie__search-bar' placeholder='Search by Title'></input>
+    
+
     </div>
     </div>
          <div className='search__results'>
