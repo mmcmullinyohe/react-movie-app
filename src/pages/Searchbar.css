@@ -58,3 +58,46 @@
     color: white;
     font-weight: bold;
 }
+
+/* Movies grid container */
+.movies__grid {
+  display: flex;
+  justify-content: center; /* center movie list horizontally */
+  padding: 20px;
+}
+
+/* Movie list - flex wrap to multiple rows */
+.movie__list {
+  display: flex;
+  flex-wrap: wrap;          /* allow multiple rows if too many movies */
+  justify-content: center;  /* center cards within each row */
+  gap: 20px;                /* spacing between movie cards */
+  max-width: 1200px;        /* optional: max width of grid */
+  width: 100%;
+}
+
+/* Individual movie card */
+.movie__card {
+  background-color: #371f55; /* match your theme */
+  border-radius: 12px;
+  overflow: hidden;
+  width: 180px;             /* fixed width per card */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.movie__card:hover {
+  transform: scale(1.05);
+}
+
+.movie__poster {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.movie__info {
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
