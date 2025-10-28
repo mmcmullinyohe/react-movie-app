@@ -30,7 +30,7 @@ body {
 /* Poster styling */
 .movie__details--poster {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   height: auto;
   border-radius: 12px;
   margin-bottom: 20px;
