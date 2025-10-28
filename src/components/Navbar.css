@@ -1,0 +1,138 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    font-family:"Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.landing {
+    padding: 24px, 12px, 12px, 24px;
+    width: 100%;
+    background-image: url('../assets/Movie_Posters.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 12px;
+    padding: 36px 0;
+    color: white;
+}
+
+.nav__list {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav__link {
+    padding: 0 12px;
+    text-decoration: none;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    font-size: 42px;
+}
+
+.nav__link {
+    padding: 0 12px;
+    text-decoration: none;
+}
+
+.nav__link--contact {
+    background-color: rgb(52, 3, 131);
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: white;
+    transition: all 300ms ease;
+}
+
+.nav__link--contact:hover {
+    background-color: rgb(143, 111, 196);
+    color: rgb(8, 8, 8);
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.title__container {
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.search__bar--wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    width: 100%;
+    position: relative;
+}
+
+.movie__search-bar {
+    width: 100%;
+    max-width: 300px;
+    height: 24px;
+   border-radius: 15px;
+   border: 1px #000 solid;
+   padding: 12px;
+}
+
+
+.movie__logo {
+    width: 50px;
+}
+
+.search__button {
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.ticket__img {
+    width: 70px;
+}
+
+.ticket__wrapper {
+    width: 100px;
+}
+
+/*SMALL PHONES*/
+@media (max-width: 480px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .navigation {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    h4 {
+        font-size: 12px;
+    }
+
+    .ticket__img {
+        max-width: 50px;
+    }
+}

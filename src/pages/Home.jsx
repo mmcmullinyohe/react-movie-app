@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // ⬅️ NEW: for routing
 import ticket from '../assets/ticket.svg';
 import './Navbar.css';
 import Movie_Posters from '../assets/Movie_Posters.png';
 import './Searchbar.css';
 
 const Home = () => {
-  // 🔹 State for search and results
+  
   const [searchTerm, setSearchTerm] = useState('');
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
-  // 🔹 New state for sort order
+  const navigate = useNavigate();
   const [sortOrder, setSortOrder] = useState('');
 
-  // 🔹 Fetch movies from the OMDb API
+  
   const renderMovies = async (term) => {
     if (!term) return;
 
@@ -28,7 +28,7 @@ const Home = () => {
       const data = await response.json();
 
       if (data.Response === 'True') {
-        // Convert the year to number for consistent sorting
+        
         const moviesWithNumericYear = data.Search.map((movie) => ({
           ...movie,
           Year: parseInt(movie.Year) || 0,
@@ -45,14 +45,14 @@ const Home = () => {
     }
   };
 
-  // 🔹 Trigger search when pressing Enter or clicking a button
+ 
   const handleSearch = () => renderMovies(searchTerm);
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') handleSearch();
   };
 
-  // 🔹 Handle dropdown change
+ 
   const handleSortChange = (e) => {
     const order = e.target.value;
     setSortOrder(order);
@@ -70,7 +70,7 @@ const Home = () => {
 
   return (
     <div>
-      {/* 🧭 NAVIGATION */}
+     
       <div className="landing">
         <div className="navigation">
           <div className="nav__container">
@@ -90,7 +90,7 @@ const Home = () => {
           </ul>
         </div>
 
-        {/* 🔎 SEARCH BAR */}
+        
         <div className="title__container">
           <h1 className="title">Browse Our Movies</h1>
         </div>
@@ -109,7 +109,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 🎬 SEARCH RESULTS SECTION */}
+    
       <div className="search__results">
         <div className="results__container">
           <h2>
@@ -135,7 +135,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* 🔹 Loading / Error / Movie Cards */}
+        
         <div className="movies__grid">
           {loading && <p>Loading...</p>}
           {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -143,7 +143,9 @@ const Home = () => {
           {!loading && !error && movies.length > 0 && (
             <div className="movie__list">
               {movies.map((movie) => (
-                <div key={movie.imdbID} className="movie__card">
+                <div key={movie.imdbID} className="movie__card"
+                onClick={() => navigate(`/movie/${movie.imdbID}`)} 
+                  style={{ cursor: 'pointer' }}>
                   <img
                     src={
                       movie.Poster !== 'N/A'
@@ -170,5 +172,7 @@ const Home = () => {
     </div>
   );
 };
+
+
 
 export default Home;
