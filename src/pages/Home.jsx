@@ -7,9 +7,9 @@ import './Searchbar.css'
 
 
 const Home = () => {
-const [search, setSearch] = useState()
+const [search, setSearch] = useState("")
 
-//GRABBING ELEMENTS
+  //GRABBING ELEMENTS
 const moviesWrapper = document.querySelector(".movies");
 const searchName = document.querySelector(".searchName");
 
@@ -64,9 +64,6 @@ function sortChange(event) {
     displayMovies(sortedMovies);
 }
 
-useEffect(() => {
-
-})
 
 
   return (
@@ -83,7 +80,7 @@ useEffect(() => {
     <ul className='nav__list'>
     <li className='nav__link'><a href="#">Home</a></li>
     <li className='nav__link'><a href="#"> Find Your Movie</a></li>
-    <li className='nav__link'><a href="mailto:mmcmullinyohe@gmail.com" target="_blank" class="nav__link--contact">
+    <li className='nav__link'><a href="mailto:mmcmullinyohe@gmail.com" target="_blank" className="nav__link--contact">
      Contact</a></li>
     </ul>
     </div>
@@ -92,7 +89,8 @@ useEffect(() => {
         <h1 className='title'>Browse Our Movies</h1>
     </div>
     <div className="search__bar--wrapper">
-        <input type='text' className='movie__search-bar' placeholder='Search by Title'></input>
+        <input type='text' className='movie__search-bar' placeholder='Search by Title'
+        ></input>
     
 
     </div>
