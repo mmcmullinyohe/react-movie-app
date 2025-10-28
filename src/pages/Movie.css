@@ -1,26 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-* {
-    font-family:"Lato", sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: rgb(55, 32, 85);
+body {
+  background-color: rgb(55, 32, 85);
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-button {
-    background-color: rgb(52, 3, 131);
-    padding: 8px 10px;
-    border-radius: 10px;
-    color: white;
-    transition: all 300ms ease;
+
+.movie__details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  justify-content: flex-start;
+  text-align: center;
+  color: white;
+  min-height: 100vh;
+  padding: 40px 20px;
 }
 
-button:hover {
-    background-color: rgb(143, 111, 196);
-    color: rgb(8, 8, 8);
-    font-weight: bold;
+/* Center the content inside the details */
+.movie__details--content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  width: 100%;
 }
 
+/* Poster styling */
+.movie__details--poster {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Text/info styling */
 .movie__details--info {
-    color: white;
+  color: white;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Back button */
+.back__btn {
+  background-color: rgb(52, 3, 131);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px 0;
+  align-self: flex-start; /* keeps it to the left instead of centered */
+}
+
+.back__btn:hover {
+  background-color: rgb(143, 111, 196);
+  color: rgb(8, 8, 8);
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .movie__details {
+    padding: 20px 10px;
+  }
+
+  .movie__details--poster {
+    max-width: 90%;
+  }
 }
