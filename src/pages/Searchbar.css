@@ -50,3 +50,11 @@
     width: 130px;
     height: 24px;
 }
+
+.search__btn {
+    width: 60px;
+    border-radius: 6px;
+    background-color: rgb(130, 118, 235);
+    color: white;
+    font-weight: bold;
+}

@@ -11,6 +11,9 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // 🔹 New state for sort order
+  const [sortOrder, setSortOrder] = useState('');
+
   // 🔹 Fetch movies from the OMDb API
   const renderMovies = async (term) => {
     if (!term) return;
@@ -25,7 +28,12 @@ const Home = () => {
       const data = await response.json();
 
       if (data.Response === 'True') {
-        setMovies(data.Search);
+        // Convert the year to number for consistent sorting
+        const moviesWithNumericYear = data.Search.map((movie) => ({
+          ...movie,
+          Year: parseInt(movie.Year) || 0,
+        }));
+        setMovies(moviesWithNumericYear);
       } else {
         setMovies([]);
         setError(data.Error || 'No results found');
@@ -42,6 +50,22 @@ const Home = () => {
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') handleSearch();
+  };
+
+  // 🔹 Handle dropdown change
+  const handleSortChange = (e) => {
+    const order = e.target.value;
+    setSortOrder(order);
+
+    if (order === 'newest') {
+      setMovies((prevMovies) =>
+        [...prevMovies].sort((a, b) => b.Year - a.Year)
+      );
+    } else if (order === 'oldest') {
+      setMovies((prevMovies) =>
+        [...prevMovies].sort((a, b) => a.Year - b.Year)
+      );
+    }
   };
 
   return (
@@ -96,8 +120,13 @@ const Home = () => {
           </h2>
 
           <div className="search__drop--down">
-            <select name="movieSort" id="movieSort">
-              <option disabled selected value="">
+            <select
+              name="movieSort"
+              id="movieSort"
+              value={sortOrder}
+              onChange={handleSortChange}
+            >
+              <option disabled value="">
                 Sort By Year
               </option>
               <option value="newest">Newest to Oldest</option>
