@@ -116,9 +116,10 @@ a {
 
 /*SMALL PHONES*/
 @media (max-width: 480px) {
-    .title {
-        font-size: 28px;
-    }
+   .title {
+    font-size: 24px;
+    text-align: center;
+  }
 
     .navigation {
         font-size: 14px;
@@ -135,4 +136,42 @@ a {
     .ticket__img {
         max-width: 50px;
     }
+
+  .movie__search-bar {
+    width: 80%;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
 }
+
+
+/* Tablets */
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .nav__link--contact {
+    padding: 6px 16px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .ticket__img {
+    width: 60px;
+  }
+}
+

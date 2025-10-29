@@ -59,29 +59,27 @@
     font-weight: bold;
 }
 
-/* Movies grid container */
 .movies__grid {
   display: flex;
-  justify-content: center; /* center movie list horizontally */
+  justify-content: center;
   padding: 20px;
-}
-
-/* Movie list - flex wrap to multiple rows */
-.movie__list {
-  display: flex;
-  flex-wrap: wrap;          /* allow multiple rows if too many movies */
-  justify-content: center;  /* center cards within each row */
-  gap: 20px;                /* spacing between movie cards */
-  max-width: 1200px;        /* optional: max width of grid */
   width: 100%;
 }
 
-/* Individual movie card */
+.movie__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+}
+
 .movie__card {
-  background-color: #371f55; /* match your theme */
+  background-color: #371f55;
   border-radius: 12px;
   overflow: hidden;
-  width: 180px;             /* fixed width per card */
+  width: 180px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -100,4 +98,84 @@
   padding: 10px;
   color: white;
   text-align: center;
+}
+
+
+
+/* Tablets (1024px) */
+@media (max-width: 1024px) {
+  .movie__card {
+    width: 160px;
+  }
+
+  .results__container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #movieSort {
+    margin-top: 10px;
+  }
+}
+
+/* Large phones / small tablets (768px) */
+@media (max-width: 768px) {
+  .movie__card {
+    width: 45%; /* 2 per row */
+  }
+
+  .results__container {
+    padding: 16px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search__btn {
+    width: 80px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .movie__search-bar {
+    max-width: 250px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+}
+
+/* Small phones (480px) */
+@media (max-width: 480px) {
+  .movie__card {
+    width: 90%; 
+  }
+
+  .movie__poster {
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  .movie__info h3 {
+    font-size: 16px;
+  }
+
+  .movie__info p {
+    font-size: 14px;
+  }
+
+  .search__bar--wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .movie__search-bar {
+    width: 80%;
+  }
+
+  .search__btn {
+    width: 100px;
+  }
 }

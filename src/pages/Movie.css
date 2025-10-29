@@ -20,10 +20,9 @@ body {
 /* Center the content inside the details */
 .movie__details--content {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 700px;
+  max-width: 1500px;
   width: 100%;
 }
 
@@ -40,8 +39,10 @@ body {
 /* Text/info styling */
 .movie__details--info {
   color: white;
+  font-size: 20px;
   text-align: center;
   line-height: 1.6;
+  max-width: 500px;
 }
 
 /* Back button */
@@ -64,11 +65,16 @@ body {
   font-weight: bold;
 }
 
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
   .movie__details {
     padding: 20px 10px;
   }
+
+.movie__details--info {
+  font-size: 1rem;
+}
 
   .movie__details--poster {
     max-width: 90%;
