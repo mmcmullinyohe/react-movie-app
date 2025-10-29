@@ -142,7 +142,7 @@ const Home = () => {
 
           {!loading && !error && movies.length > 0 && (
             <div className="movie__list">
-              {movies.map((movie) => (
+              {movies.slice(0,6).map((movie) => (
                 <div key={movie.imdbID} className="movie__card"
                 onClick={() => navigate(`/movie/${movie.imdbID}`)} 
                   style={{ cursor: 'pointer' }}>
