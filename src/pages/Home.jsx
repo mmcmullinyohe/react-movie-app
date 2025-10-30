@@ -1,4 +1,4 @@
-// Home.jsx
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ticket from '../assets/ticket.svg';
@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <div>
-      {/* Navigation */}
+     
       <div className="landing">
         <div className="navigation">
           <div className="nav__container">
@@ -40,12 +40,12 @@ const Home = () => {
           </ul>
         </div>
 
-        {/* Title */}
+       
         <div className="title__container">
           <h1 className="title">Browse Our Movies</h1>
         </div>
 
-        {/* Search Bar */}
+       
         <div className="search__bar--wrapper">
           <input
             type="text"
